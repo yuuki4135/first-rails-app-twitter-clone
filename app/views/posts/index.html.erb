@@ -1,0 +1,8 @@
+<div class="posts-index">
+    <% if flash[:notice] %>
+    <%= flash[:notice] %>
+    <% end %>
+    <% @posts.each do|post|%>
+    <%= link_to(post.content,"/posts/#{post.id}") %>
+    <% end %>
+</div>

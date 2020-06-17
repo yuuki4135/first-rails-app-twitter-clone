@@ -1,0 +1,17 @@
+<h1>編集する</h1>
+<% if @post.errors.any? %>
+<% @post.errors.full_messages.each do |message| %>
+            <ul>
+              
+              <div class="form-error">
+              <li><%= message %></li>
+              </ul>
+              </div>
+              <% end %>
+          <% end %>
+<%= form_tag("/posts/#{@post.id}/update")do %>
+<textarea name="content"><%= @post.content %></textarea>
+<input type="submit" value="投稿">
+
+    
+<% end %>

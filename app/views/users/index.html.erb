@@ -1,0 +1,16 @@
+<div class="user-index">
+    <h1>ユーザー一覧</h1>
+    <div class="users-message">
+    <% if flash[:notice] %>
+    <%= flash[:notice] %>
+    <% end %>
+    </div>
+    <div class="user-list">
+    <%= @users.each do|user|%>
+    <div class="user-image">
+    <img src="<%= "/user_images/#{user.image_name}" %>">
+    </div>
+    <%=link_to(user.name,"/users/#{user.id}") %> 
+    <% end %>
+    </div>
+</div>

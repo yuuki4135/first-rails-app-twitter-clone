@@ -1,0 +1,13 @@
+<div class="post-content">
+ <%= @post.content %>
+    
+<div class="post-created-at">
+ <%= @post.created_at.strftime("%Y-%m-%d %H:%M") %>
+    
+ <%= link_to("編集する","/posts/#{@post.id}/edit") %>
+ 
+ <%= link_to("削除","/posts/#{@post.id}/destroy",{method:"post"}) %>
+</div>
+    
+    
+</div>

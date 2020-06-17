@@ -1,0 +1,12 @@
+<h1>編集する</h1>
+<%= form_tag("/users/#{@user.id}/update",{multipart:true})do %>
+<p>ユーザー名</p>
+<textarea name="name"><%= @user.name %></textarea>
+<p>メールアドレス</p>
+<textarea name="email"><%= @user.email %></textarea>
+<p>パスワード</p>
+<input type="password" name="password">
+<p>画像</p>
+<input name="image" type="file">
+<input type="submit" value="編集">
+<% end %>

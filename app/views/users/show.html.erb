@@ -1,0 +1,9 @@
+<div class="users-show">
+    <ul>
+   <li><%= @user.name %></li> 
+    <li><%= @user.email %></li>
+    </ul>
+　　<%= link_to("編集","/users/#{@user.id}/edit") %>
+　　<%= link_to("削除","/users/#{@user.id}/destroy",{method: "post"}) %>
+　　
+</div>

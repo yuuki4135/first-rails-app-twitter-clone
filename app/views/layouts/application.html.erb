@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Try</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+   <body>
+<header>
+<div class="header-top">
+  <%= link_to("トップページへ","/") %>
+</div>
+<div class="header-menu">
+  <% if session[:user_id] %>
+  <%= link_to(@current_user.name,"/users/#{@current_user.id}") %>
+  <%= link_to("投稿一覧へ","/posts/index") %>
+  <%= link_to("つぶやく","/posts/new") %>
+  <%= link_to("ユーザー一覧","/users/index") %>
+  <%= link_to("ログアウト","/logout",{method: :post}) %>
+  <% else %>
+  <%= link_to("新規登録","/users/signup") %>
+  <%= link_to("ログイン","/users/login") %>
+  <% end %>
+  
+  <% if session[:user_id] %>
+  <ul>
+  <li>
+    現在ログインしているユーザー
+    <%= session[:user_id] %>
+    
+  </li>
+  </ul>
+  <% end %>
+  
+</div>
+</header>
+<footer>
+  
+  
+</footer>
+    <%= yield %>
+  </body>
+</html>
