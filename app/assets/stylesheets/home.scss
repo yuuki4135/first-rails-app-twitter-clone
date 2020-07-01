@@ -1,6 +1,10 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+header{
+    border: solid 2px;
+}
+
 .header-top{
     float:left;
     padding:20px;
@@ -11,10 +15,16 @@
     padding:20px;
 }
 
-.top{
-    padding:200px;
+.top-moji{
+    padding: 200px;
     text-align: center;
     
+}
+.top-moji h1{
+    color: green;
+    font-weight: bold;
+    border: solid 2px;
+    background: #c6e4ff;
 }
 
 header{
@@ -22,3 +32,8 @@ header{
   background-color:aqua;  
 }
 
+body{
+    background-image: url(/back-image.jpg);
+    background-size: cover;
+
+}

@@ -2,7 +2,147 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.user-image img{
+// flashメッセージ,errorメッセージ//
+.show-flash-message{
+  font-size: 25px;
+  background: yellow;
+  text-align: center;
+  padding-left: 500px;
+}
+
+.flash-message{
+  font-size: 25px;
+  background: yellow;
+  text-align: center;
+}
+
+.error-message{
+  font-size: 25px;
+  background: yellow;
+  text-align: center;
+}
+
+
+//ここからlogin_formビュー//
+.login-form-all{
+  text-align: center;
+}
+
+.login-form{
+  display: inline-block;
+   width: 300px;
+  height: 200px;
+  border: solid 2px;
+  background: #c6e4ff;
+}
+
+// ここからsignupビュー//
+.signup-box{
+  text-align: center;
+}
+.signup-form{
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  border: solid 2px;
+  background: #c6e4ff;
+}
+
+
+
+//ここからindexビュー//
+.user-index h1{
+  text-align: center;
+  border: solid 2px;
+  background-color: blue;
+}
+.user-name{
+  font-size: 30px;
+  background: aqua;
+  border: solid 2px;
+}
+
+
+.user-image{
   width: 10%;
   height: 10%;
+  border-radius: 130px;
+}
+
+.user-list{
+  text-align: center;
+}
+
+
+//ここからshowビュー//
+.users-show{
+  text-align: center;
+}
+
+.users-show h1{
+  color: blue;
+  font-size: 50px;
+}
+
+.user-top{
+  text-align: center;
+}
+
+.user-top-image{
+  width: 10%;
+  height: 20%;
+  border-radius: 130px;
+}
+.user-top ul{
+  list-style: none;
+  font-size: 30px;
+  font-weight: bold;
+  background: white;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.user-show-list{
+  text-align: center;
+  font-size: 40px;
+  border: solid 2px;
+  background: aqua;
+}
+
+.user-tweet-list{
+  display: inline-block;
+　height: 40px;
+　width: 50px;
+  font-size: 40px;
+  background: white;
+  border: solid 1px;
+}
+
+.user-tweet h1{
+  
+}
+
+.edit-destroy{
+  text-align: center;
+  background: white;
+  font-size: 30px;
+}
+
+
+
+//ここからeditビュー//
+.user-edit-form h1{
+  color: blue;
+  font-size: 50px;
+}
+
+.user-edit-form{
+  width: 300px;
+  height: 600px;
+  text-align: center;
+  border: solid 2px;
+  background: #c6e4ff;
+  margin-left: 700px;
 }

@@ -1,14 +1,28 @@
+
+    
+    
+<div class="error-message">
 <% if @error_message %>
 <%= @error_message %>
 <% end %>
+</div>
 
-<%= flash[:notice] %>
+
+<div class="flash-message">
+<% if flash[:notice] %>
+<%= flash[:notice] %>  
+<% end %>
+</div>
+
+<div class= "login-form-all">
+<br><div class="login-form">
 <%= form_tag("/login")do %>
-
 <p>メールアドレス</p>
 <input name="email" value="<%= @email %>">
-
 <p>パスワード</p>
 <input type="password" name="password" value="<%= @password %>">
-<input type="submit" value="ログイン">
+<br><input type="submit" value="ログイン">
+</div>
 <% end %>
+
+</div>

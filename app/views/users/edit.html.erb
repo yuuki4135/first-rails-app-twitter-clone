@@ -1,3 +1,15 @@
+<div class="error-message">
+ <% if @user.errors.any? %>
+ <% @user.errors.full_messages.each do |message| %>
+ <%= message %>
+ <% end %>
+ <% end %>
+ <%= @error_messege %>
+</div>
+
+
+<div class="user-edit-form">
+
 <h1>編集する</h1>
 <%= form_tag("/users/#{@user.id}/update",{multipart:true})do %>
 <p>ユーザー名</p>
@@ -6,7 +18,9 @@
 <textarea name="email"><%= @user.email %></textarea>
 <p>パスワード</p>
 <input type="password" name="password">
-<p>画像</p>
+<h3>画像</h3>
 <input name="image" type="file">
-<input type="submit" value="編集">
+<br><input type="submit" value="編集">
 <% end %>
+
+</div>

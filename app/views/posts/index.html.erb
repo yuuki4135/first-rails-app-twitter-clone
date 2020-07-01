@@ -1,8 +1,31 @@
-<div class="posts-index">
+<div class="post-flash-message">
     <% if flash[:notice] %>
     <%= flash[:notice] %>
     <% end %>
+</div>
+    
+<div class= "post-list">
     <% @posts.each do|post|%>
-    <%= link_to(post.content,"/posts/#{post.id}") %>
+    <br><div class="posts-index">
+    <img src="<%= "/user_images/#{post.user.image_name}" %>" class="post-user-image">
+ 
+    <%= link_to(post.user.name,"/users/#{post.user.id}",{class: "post-user-name"}) %>
+    <%= post.created_at.strftime("%Y年%-m月%-d日 %-H時%-M分%-S秒") %>
+    <br><%= link_to(post.content,"/posts/#{post.id}",{class: "post-content"}) %>
+   
+   <% if Like.find_by(user_id: @current_user.id,post_id:post.id) %>
+ <%= link_to("/likes/#{post.id}/destroy", {method: "post"}) do %>
+ <span class="fa fa-heart like-btn-unlike">
+ <% end %>
+ <% else %>
+ <%= link_to("/likes/#{post.id}/create",{method: "post"}) do %>
+ <span class="fa fa-heart like-btn">
+ <% end %>
+ <% end %>
+ <% @like_count=Like.where(post_id: post.id).count %>
+ <%= @like_count %>
+</div>
     <% end %>
+    
+    
 </div>

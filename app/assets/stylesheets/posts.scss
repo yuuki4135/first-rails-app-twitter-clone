@@ -2,10 +2,110 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+//共通表示項目//
+.post-flash-message{
+  background: aqua;
+  font-size: 30px;
+  text-align: center;
+}
+
+.post-user-image{
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  display: inline;
+  border-radius: 130px;
+}
+
+.post-user-image-big{
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  display: inline;
+  border-radius: 130px;
+}
+
+//ここからpost.new//
+.post-new{
+  text-align: center;
+}
+.post-new h1{
+  
+  font-size: 30px;
+}
+
+.post-new textarea{
+  resize: none;
+  font-size: 15px;
+  padding: 10px;
+  min-height: 140px;
+}
+
+.post-new input{
+  font-size: 20px;
+}
+
+
+//post.index//
+
+
+.posts-index{
+  display: inline-block;
+  border: solid 2px;
+  background: white;
+}
+
+.post-list{
+  text-align: center;
+}
+
+.post-user-name{
+  
+}
+.post-content{
+  
+}
+
+
+//post.show//
+.post-show{
+  text-align: center;
+}
+
+.post-show-background{
+  background: white;
+  display: inline-block;
+  width: 400px;
+  height: auto;
+}
+
+
+.post-edit-destroy{
+  background: white;
+  border: solid 1px;
+  font-size: 20px;
+}
+
+.post-show-content{
+  font-size: 25px;
+}
+
+
+
+
+
 .post-textarea{
     padding:20px;
 }
 
 .form-error{
     padding:20px;
+}
+
+.like-btn{
+  color: #8899a6;
+}
+.like-btn-unlike{
+  color: #ff2581;
 }

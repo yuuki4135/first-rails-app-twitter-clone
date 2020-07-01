@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
    <body>
 <header>
@@ -22,16 +23,6 @@
   <% else %>
   <%= link_to("新規登録","/users/signup") %>
   <%= link_to("ログイン","/users/login") %>
-  <% end %>
-  
-  <% if session[:user_id] %>
-  <ul>
-  <li>
-    現在ログインしているユーザー
-    <%= session[:user_id] %>
-    
-  </li>
-  </ul>
   <% end %>
   
 </div>

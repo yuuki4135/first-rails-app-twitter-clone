@@ -1,10 +1,4 @@
-<div class="show-flash-message">
-<% if flash[:notice] %>
-<%= flash[:notice] %>
-<% end %>
-</div>
-
- <div class="users-show">
+<div class="users-show">
     <div class="user-top">
     <br><img src="<%= "/user_images/#{@user.image_name}" %>" class="user-top-image">
     <ul>
@@ -20,25 +14,28 @@
     <% if @user.id == @current_user.id %>  
 　　<%= link_to("編集","/users/#{@user.id}/edit") %>
 　　<%= link_to("削除","/users/#{@user.id}/destroy",{method: "post"}) %>
-　　<% end %>    
-    </div>
-    <div class="user-show-list">
-    <%= link_to("個人投稿一覧","/users/#{@user.id}")%>
-　　<%= link_to("いいね！一覧","/users/#{@user.id}/like")%>
+　　<% end %>
 　　</div>
 　　
-　
-　　<h1>投稿一覧</h1>
 　　
-　　  <% @user.posts.each do|post| %>
+　　<div class="user-show-list">
+　　<%= link_to("個人投稿一覧","/users/#{@user.id}")%>
+　　<%= link_to("いいね！一覧","/users/#{@user.id}/like")%>
+    </div>
+    
+    <h1>いいね！したつぶやき一覧</h1>
+    
+    
+    <% @likes.each do|like| %>
     <div class="user-tweet-list">
+    <% post=Post.find_by(id: like.post_id) %>
     <img src="<%= "/user_images/#{post.user.image_name}" %>" class="user-image">
     <%= link_to(post.user.name,"/users/#{post.user.id}") %>
-    <%= post.user.created_at.strftime("%Y年%-m月%-d日 %-H時%-M分%-S秒") %>
+     <%= post.user.created_at.strftime("%Y年%-m月%-d日 %-H時%-M分%-S秒") %>
     <br><%= link_to(post.content,"/posts/#{post.id}") %>
-
-
-   <% if Like.find_by(user_id: @current_user.id,post_id:post.id) %>
+    
+    
+    <% if Like.find_by(user_id: @current_user.id,post_id:post.id) %>
  <%= link_to("/likes/#{post.id}/destroy", {method: "post"}) do %>
  <span class="fa fa-heart like-btn-unlike">
  <% end %>
@@ -49,7 +46,8 @@
  <% end %>
  <% @like_count=Like.where(post_id: post.id).count %>
  <%= @like_count %>
-</div>
+    </div>
     <% end %>
-</div>  
     
+    
+</div>

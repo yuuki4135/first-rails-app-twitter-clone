@@ -1,3 +1,13 @@
+<div class="error-message">
+<% if @post.errors.any? %>
+<% @post.errors.full_messages.each do |message| %>
+<%= message %>
+<% end %>
+<% end %>   
+</div>
+
+
+
 <div class="post-new">
     <h1>つぶやく</h1>
     <%= form_tag("/posts/create")do %>

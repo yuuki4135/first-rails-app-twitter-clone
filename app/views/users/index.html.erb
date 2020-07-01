@@ -5,12 +5,14 @@
     <%= flash[:notice] %>
     <% end %>
     </div>
+    
+    <% @users.each do|user|%>
     <div class="user-list">
-    <%= @users.each do|user|%>
-    <div class="user-image">
-    <img src="<%= "/user_images/#{user.image_name}" %>">
+    <img src="<%= "/user_images/#{user.image_name}" %>" class="user-image">
+    <!---<div class="user-name"--->
+        <%=link_to(user.name,"/users/#{user.id}",{class: "user-name"}) %> 
+    <!----</div>---->
     </div>
-    <%=link_to(user.name,"/users/#{user.id}") %> 
     <% end %>
-    </div>
+    
 </div>

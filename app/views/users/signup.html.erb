@@ -1,3 +1,8 @@
+<div class="flash-message">
+    <%= flash[:notice]%>
+    
+</div>
+
 
 <% if @user.errors.any? %>
 <% @user.errors.full_messages.each do |message| %>
@@ -8,10 +13,11 @@
 
 <% end %>
 <% end %>
-</di>
+</div>
 
 <%= form_tag("/users/create")do %>
-
+<body>
+<br><div class="signup-box">
 <div class="signup-form">
 <p>ユーザー名</p>
 <input name="name" value="<%= @user.name%>">
@@ -21,6 +27,8 @@
 
 <p>パスワード</p>
 <input type="password" name="password" value="<%= @user.password%>">
-<input type="submit" value="登録">
+<br><input type="submit" value="登録">
 </div>
+</dix>
+</body>
 <% end %>
