@@ -1,20 +1,22 @@
 class UsersController < ApplicationController
-before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
-before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
-before_action :forbid_login_user, {only: [:signup, :login, :create]}
-  def index
+ before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
+ before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
+ before_action :forbid_login_user, {only: [:signup, :login, :create]}
+ 
+ def index
     @users=User.all
   end
   
+  
   def show
-   #@id=params[:id] 
-   @user=User.find_by(id: session[:user_id])
+   @id=params[:id] 
+   @user=User.find_by(id: params[:id])
 end
 
 def signup
 @user=User.new
 end
-
+  
 def create
 @user=User.new(name: params[:name],email: params[:email], password: params[:password], image_name: "default_user.jpg")
 @user.save
@@ -114,4 +116,27 @@ def like
 end
 
 
+def search_form
 end
+
+def search
+params[:content]
+@posts=Post.where("content LIKE ?", "%#{params[:content]}%")
+@posts_count=Post.where("content LIKE ?", "%#{params[:content]}%").count
+if @posts_count == 0
+@error_message_search="見つかりませんでした、もう一度入力してください"
+render("/users/search_form")
+else
+@search_result_message="#{@posts_count}件見つかりました"
+render("/users/search_result")
+
+end
+end
+
+
+def search_result
+    
+end
+
+
+  end

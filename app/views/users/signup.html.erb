@@ -6,7 +6,7 @@
 
 <% if @user.errors.any? %>
 <% @user.errors.full_messages.each do |message| %>
-<div class="user-error-message">
+<div class="error-message">
     <ul>
     <li><%= message %></li>
     </ul>

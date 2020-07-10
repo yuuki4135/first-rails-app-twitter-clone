@@ -1,0 +1,19 @@
+<div class="error_message">
+<% if @error_message_search %>
+<%= @error_message_search %>
+<% end %>
+</div>
+
+<div class="search-page">
+
+<h1>つぶやきを検索する</h1>
+<h3>検索した文字と一致したつぶやきを表示します</h3>
+
+<div class="search-form">
+<%= form_tag("/users/search") do %>
+<textarea name="content"></textarea>
+<br><input type="submit" value="検索">
+<% end %>
+</div>
+
+</div>

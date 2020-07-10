@@ -5,14 +5,14 @@
 // flashメッセージ,errorメッセージ//
 .show-flash-message{
   font-size: 25px;
-  background: yellow;
+  background: #FFFF99;
   text-align: center;
   padding-left: 500px;
 }
 
 .flash-message{
   font-size: 25px;
-  background: yellow;
+  background: #FFFF99;
   text-align: center;
 }
 
@@ -54,11 +54,11 @@
 .user-index h1{
   text-align: center;
   border: solid 2px;
-  background-color: blue;
+  background-color: #5BFF7F;
 }
 .user-name{
   font-size: 30px;
-  background: aqua;
+  background: #99FFCC;
   border: solid 2px;
 }
 
@@ -80,7 +80,7 @@
 }
 
 .users-show h1{
-  color: blue;
+  color: #66FF99;
   font-size: 50px;
 }
 
@@ -108,7 +108,7 @@
   text-align: center;
   font-size: 40px;
   border: solid 2px;
-  background: aqua;
+  background: #5BFF7F;
 }
 
 .user-tweet-list{
@@ -134,7 +134,7 @@
 
 //ここからeditビュー//
 .user-edit-form h1{
-  color: blue;
+  color: #66FF99;
   font-size: 50px;
 }
 
@@ -145,4 +145,17 @@
   border: solid 2px;
   background: #c6e4ff;
   margin-left: 700px;
+}
+
+
+//ここからsearchビュー//
+.search-page{
+  text-align: center;
+}
+
+.search-form textarea{
+  resize: none;
+  font-size: 15px;
+  padding: 10px;
+  min-height: 140px;
 }
