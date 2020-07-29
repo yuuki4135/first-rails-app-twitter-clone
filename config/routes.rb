@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "users/:id/edit" => "users#edit"
   post "users/search" =>"users#search"
   post "login" => "users#login"
-  post "logout" => "users#logout"
+  post "/logout" => "users#logout"
   post "users/create" =>"users#create"
   post "users/:id/update" => "users#update"
   post "users/:id/destroy" => "users#destroy"

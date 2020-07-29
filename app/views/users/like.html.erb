@@ -1,21 +1,20 @@
 <div class="users-show">
     <div class="user-top">
-    <br><img src="<%= "/user_images/#{@user.image_name}" %>" class="user-top-image">
+    <img src="<%= "/user_images/#{@user.image_name}" %>" class="user-top-image">
     <ul>
    <li><%= @user.name %></li> 
    <% if @user.id == @current_user.id %>  
     <li><%= @user.email %></li>
-    <% end %>
     </ul>
+    <% end %>
     </div>
     
-    
-    <div class="edit-destroy">
     <% if @user.id == @current_user.id %>  
+    <div class="edit-destroy">
 　　<%= link_to("編集","/users/#{@user.id}/edit") %>
 　　<%= link_to("削除","/users/#{@user.id}/destroy",{method: "post"}) %>
-　　<% end %>
 　　</div>
+　　<% end %>
 　　
 　　
 　　<div class="user-show-list">

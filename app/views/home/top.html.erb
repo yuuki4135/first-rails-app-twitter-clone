@@ -1,11 +1,24 @@
 <body>
-    
 <div class="top-moji">
     <h1>TUBUYAKIのページ</h1>
+    
+
+  
+      <% if session[:user_id] %>
+      <% else %>
+      <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <h3>始める</h3>
+  </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <ul class="nav flex-column">
+     <li><%= link_to("新規登録","/users/signup") %></li>
+      <li><%= link_to("ログイン","/users/login") %></li>
+      </div>
+      </ul>
+      <% end %>
+
 </div>    
-    
-    
-    
 </body>
-
-
+							
+				

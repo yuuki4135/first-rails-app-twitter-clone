@@ -1,6 +1,39 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//ここからscss//
+.top-moji{
+    padding: 250px;
+    text-align: center;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    
+}
+.top-moji h1{
+    font-size: 100px;
+    color: white;
+    font-weight: bold;
+}
+
+body{
+    background-image: url(/back-image.jpeg);
+    background-size: cover;
+
+}
+
+.navigate-var{
+    padding: 50px 30px 50px 30px;
+}
+header{
+    background-color: white;
+}
+.image-circle{
+width: 80px;
+height: 80px;
+}
+
+/*
 header{
     border: solid 2px;
 }
@@ -15,25 +48,14 @@ header{
     padding:20px;
 }
 
-.top-moji{
-    padding: 200px;
-    text-align: center;
-    
-}
-.top-moji h1{
-    color: green;
-    font-weight: bold;
-    border: solid 2px;
-    background: #c6e4ff;
-}
+
 
 header{
     padding:50px;
   background-color:#CCCCFF;  
 }
 
-body{
-    background-image: url(/back-image.jpeg);
-    background-size: cover;
 
-}
+*/
+
+

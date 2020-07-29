@@ -9,24 +9,36 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
    <body>
-<header>
-<div class="header-top">
-  <%= link_to("トップページへ","/") %>
-</div>
-<div class="header-menu">
-  <% if session[:user_id] %>
-  <%= link_to(@current_user.name,"/users/#{@current_user.id}") %>
-  <%= link_to("投稿一覧へ","/posts/index") %>
-  <%= link_to("つぶやく","/posts/new") %>
-  <%= link_to("つぶやき検索","/users/search") %>
-  <%= link_to("ユーザー一覧","/users/index") %>
-  <%= link_to("ログアウト","/logout",{method: :post}) %>
-  <% else %>
-  <%= link_to("新規登録","/users/signup") %>
-  <%= link_to("ログイン","/users/login") %>
-  <% end %>
   
+  
+<nav class="navbar nav-tabs" style="background-color: white">
+  <ul class="nav navbar">
+   <li><img src="/header-image.png" class="image-circle"></li>
+   </ul>
+      <ul class="nav float-left">
+   <li class="nav-item"><%= link_to("トップページへ","/", {class: "nav-link active"})%></li>
+        <% if session[:user_id] %>
+        <li class="nav-item"><%= link_to(@current_user.name,"/users/#{@current_user.id}", {class: "nav-link active"}) %></li>
+        <li class="nav-item"><%= link_to("投稿一覧へ","/posts/index", {class: "nav-link active"}) %></li>
+        <li class="nav-item"><%= link_to("つぶやく","/posts/new", {class: "nav-link active"}) %></li>
+        <li class="nav-item"><%= link_to("つぶやき検索","/users/search", {class: "nav-link active"}) %></li>
+        <li class="nav-item"><%= link_to("ユーザー一覧","/users/index", {class: "nav-link active"}) %></li>
+        </ul>
+        <ul class="nav nav-pills float-right">
+        <li><button class="btn btn-outline-success" type="button"><%= link_to("ログアウト","/logout",{method: :post}) %></button></li>
+        </ul>
+        
+      <% else %>
+      </ul>
+      <ul class="nav nav-pills float-right">
+      <button class="btn btn-outline-success" type="button"><li><%= link_to("新規登録","/users/signup") %></li></button>
+      <button class="btn btn-outline-success" type="button"><li><%= link_to("ログイン","/users/login") %></li></button>
+      </ul>
+    <% end %>
+      </nav>
 </div>
+ 
+ 
 </header>
 <footer>
   
