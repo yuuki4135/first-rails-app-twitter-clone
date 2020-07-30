@@ -3,6 +3,8 @@
 # 概要
 Twitter風のサイトです。 Rails + PostgreSQL で作成しています。
 
+デザインはBootstrapを利用し、編集しています。
+
 herokuにデプロイしています。 こちらからアクセスしてください。 https://tubuyaki-no-page.herokuapp.com/
 
 最初の読み込みが遅い場合がありますがサーバーが立ち上がっているので少々お待ちください。
