@@ -6,13 +6,14 @@
     
 <div class= "post-list">
     <% @posts.each do|post|%>
-    <br><div class="posts-index">
-    <img src="<%= "/user_images/#{post.user.image_name}" %>" class="post-user-image">
+    <div class="posts-index">
+    <img src="<%="/user_images/#{post.user.image_name}" %>" class="post-user-image">
  
     <%= link_to(post.user.name,"/users/#{post.user.id}",{class: "post-user-name"}) %>
     <%= post.created_at.strftime("%Y年%-m月%-d日 %-H時%-M分%-S秒") %>
-    <br><%= link_to(post.content,"/posts/#{post.id}",{class: "post-content"}) %>
-   
+    <div class="border">
+    <%= link_to(post.content,"/posts/#{post.id}",{class: "post-content"}) %>
+   </div>
    <% if Like.find_by(user_id: @current_user.id,post_id:post.id) %>
  <%= link_to("/likes/#{post.id}/destroy", {method: "post"}) do %>
  <span class="fa fa-heart like-btn-unlike">

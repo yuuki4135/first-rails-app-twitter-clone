@@ -10,14 +10,14 @@
     </div>
     
     <% if @user.id == @current_user.id %>  
-    <div class="edit-destroy">
+    <div class="edit-destroy2">
 　　<%= link_to("編集","/users/#{@user.id}/edit") %>
 　　<%= link_to("削除","/users/#{@user.id}/destroy",{method: "post"}) %>
 　　</div>
 　　<% end %>
 　　
-　　
-　　<div class="user-show-list">
+　　<br>
+　　<div class="user-show-list2">
 　　<%= link_to("個人投稿一覧","/users/#{@user.id}")%>
 　　<%= link_to("いいね！一覧","/users/#{@user.id}/like")%>
     </div>
@@ -26,7 +26,7 @@
     
     <div class="post-list">
     <% @likes.each do|like| %>
-   <br><div class="posts-index">
+   <div class="posts-index">
     <% post=Post.find_by(id: like.post_id) %>
     <img src="<%= "/user_images/#{post.user.image_name}" %>" class="post-user-image">
     <%= link_to(post.user.name,"/users/#{post.user.id}") %>
@@ -34,7 +34,7 @@
     <br><%= link_to(post.content,"/posts/#{post.id}") %>
     
     
-    <% if Like.find_by(user_id: @current_user.id,post_id:post.id) %>
+ <% if Like.find_by(user_id: @current_user.id,post_id:post.id) %>
  <%= link_to("/likes/#{post.id}/destroy", {method: "post"}) do %>
  <span class="fa fa-heart like-btn-unlike">
  <% end %>

@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // flashメッセージ,errorメッセージ//
+
+
 .show-flash-message{
   font-size: 25px;
   background: #FFFF99;
@@ -63,8 +65,9 @@
 
 
 .user-image{
-  width: 10%;
-  height: 10%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
   border-radius: 130px;
 }
 
@@ -88,8 +91,8 @@
 }
 
 .user-top-image{
-  width: 10%;
-  height: 20%;
+  width: 230px;
+  height: 200px;
   border-radius: 130px;
 }
 .user-top ul{
@@ -102,16 +105,34 @@
   margin-right: auto;
 }
 
+.text-align-left{
+  text-align: left;
+}
 
+.text-align-right{
+  text-align: right;
+}
 .user-show-list{
-  text-align: center;
+  display: inline;
   font-size: 40px;
   border: solid 2px;
   background: #5BFF7F;
+  width: 570px;
+  padding-left: 90px;
+  padding-right: 20px;
+}
+.user-show-list2{
+  display: inline;
+  font-size: 40px;
+  border: solid 2px;
+  background: #5BFF7F;
+  width: 570px;
+  padding-right: 110px;
+  margin-right: 90px;
 }
 
 .user-tweet-list{
-  display: inline-block;
+  display: inline;
 　height: 40px;
 　width: 50px;
   font-size: 40px;
@@ -124,9 +145,18 @@
 }
 
 .edit-destroy{
+  display: inline;
   text-align: center;
   background: white;
   font-size: 30px;
+}
+.edit-destroy2{
+  display: inline;
+  text-align: center;
+  background: white;
+  font-size: 30px;
+  margin-left: 73px;
+  padding-right: 10px;
 }
 
 
@@ -153,8 +183,12 @@
 }
 
 .search-form textarea{
-  resize: none;
+  resize: both;
   font-size: 15px;
   padding: 10px;
-  min-height: 140px;
+  min-height: 160px;
+}
+
+.form-inline button{
+  display: inline-block;
 }

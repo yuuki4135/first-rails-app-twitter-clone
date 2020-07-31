@@ -8,10 +8,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
+ 
    <body>
   
-  
-<nav class="navbar nav-tabs" style="background-color: white">
+ 
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
   <ul class="nav navbar">
    <li><img src="/header-image.png" class="image-circle"></li>
    </ul>
@@ -20,19 +21,30 @@
         <% if session[:user_id] %>
         <li class="nav-item"><%= link_to(@current_user.name,"/users/#{@current_user.id}", {class: "nav-link active"}) %></li>
         <li class="nav-item"><%= link_to("投稿一覧へ","/posts/index", {class: "nav-link active"}) %></li>
+        <li class="nav-item"><%= link_to("ユーザー一覧","/users/index", {class: "nav-link active"}) %></li>
         <li class="nav-item"><%= link_to("つぶやく","/posts/new", {class: "nav-link active"}) %></li>
         <li class="nav-item"><%= link_to("つぶやき検索","/users/search", {class: "nav-link active"}) %></li>
-        <li class="nav-item"><%= link_to("ユーザー一覧","/users/index", {class: "nav-link active"}) %></li>
+        <%= form_tag("/users/search",{class: "form-inline"}) do %>
+    <input class="form-control mr-sm-2" type="search" placeholder="つぶやき検索" aria-label="Search" name="content">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">検索</button>
+   <% end %>
+ 
         </ul>
         <ul class="nav nav-pills float-right">
-        <li><button class="btn btn-outline-success" type="button"><%= link_to("ログアウト","/logout",{method: :post}) %></button></li>
+          <%= link_to "/logout",{method: :post} do%>
+        <li><button class="btn btn-outline-success" type="button">ログアウト</button></li>
+        <% end %>
         </ul>
         
       <% else %>
       </ul>
       <ul class="nav nav-pills float-right">
-      <button class="btn btn-outline-success" type="button"><li><%= link_to("新規登録","/users/signup") %></li></button>
-      <button class="btn btn-outline-success" type="button"><li><%= link_to("ログイン","/users/login") %></li></button>
+        <%= link_to "/users/signup" do%>
+      <li><button class="btn btn-outline-success" type="button">新規登録</button></li>
+      <% end %>
+      <%= link_to "/users/login" do%>
+      <li><button class="btn btn-outline-success" type="button">ログイン</button></li>
+      <% end %>
       </ul>
     <% end %>
       </nav>
@@ -40,10 +52,12 @@
  
  
 </header>
-<footer>
-  
+</div>
+ <div class="wrapper">
+    <%= yield %>
+    <footer>
+  <p class="footer-text">tubuyaki　の　ページ</p>
   
 </footer>
-    <%= yield %>
   </body>
 </html>

@@ -36,10 +36,10 @@
 }
 
 .post-new textarea{
-  resize: none;
+  resize: both;
   font-size: 15px;
   padding: 10px;
-  min-height: 140px;
+  min-height: 160px;
 }
 
 .post-new input{
@@ -49,15 +49,26 @@
 
 //post.index//
 
+.border{
+  display: block;
+  border-bottom: 5px;
+  border-top: 5px;
+}
 
 .posts-index{
   display: inline-block;
   border: solid 2px;
   background: white;
+  height: 150px;
+  width: 1100px;
 }
 
 .post-list{
   text-align: center;
+}
+
+.post-user-content{
+  text-align: left;
 }
 
 .post-user-name{
@@ -96,7 +107,7 @@
 
 
 .post-textarea{
-    padding:20px;
+    resize: both;
 }
 
 .form-error{
