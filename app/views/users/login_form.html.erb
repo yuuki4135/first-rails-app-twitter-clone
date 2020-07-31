@@ -14,15 +14,17 @@
 <% end %>
 </div>
 
-<div class= "login-form-all">
+<div class="login-form-all">
 <br><div class="login-form">
 <%= form_tag("/login")do %>
+<br>
 <p>メールアドレス</p>
 <input name="email" value="<%= @email %>">
 <p>パスワード</p>
 <input type="password" name="password" value="<%= @password %>">
+<br>
 <br><button type="submit" class="btn btn-primary">ログイン</button>
+</div>
 </div>
 <% end %>
 
-</div>
