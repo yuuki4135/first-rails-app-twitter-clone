@@ -1,11 +1,13 @@
 ### README
 
 # 概要
+私がIT業界未経験の時に、Progateを見ながら作成したRailsアプリです。
+
 Twitter風のサイトです。 Rails + PostgreSQL で作成しています。
 
 デザインはBootstrapを利用し、編集しています。
 
-herokuにデプロイしています。 こちらからアクセスしてください。 https://tubuyaki-no-page.herokuapp.com/
+herokuにデプロイしています。 こちらからアクセスしてください。 https://tubuyaki-no-page.herokuapp.com/ ※現在はアクセスできないため、無料サーバー等検討し再度デプロイ予定
 
 最初の読み込みが遅い場合がありますがサーバーが立ち上がっているので少々お待ちください。
 
